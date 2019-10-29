@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv) {
   ros::init(argc, argv, "foo_node");
-  ros::NodeHandle nh("~");
+  ros::NodeHandles nh("~");
   std_msgs::String msg;
   nh.param<std::string>("message", msg.data, "Hello, World!");
   ros::Publisher pub = nh.advertise<std_msgs::String>("message", 1);
